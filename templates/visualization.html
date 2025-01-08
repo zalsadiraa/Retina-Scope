@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Dataset | RetinaScope</title>
+        <script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflS50iB-/www-widgetapi.js" async=""></script>
+        <script src="https://www.youtube.com/player_api"></script>
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    
+        <!-- Preload CSS -->
+        <link rel="stylesheet" as="style" href="{{ url_for('static', filename='css/preload.min.css') }}" />
+        <link rel="stylesheet" as="style" href="{{ url_for('static', filename='css/icomoon.css') }}" />
+        <link rel="stylesheet" as="style" href="{{ url_for('static', filename='css/libs.min.css') }}" />
+        
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/preload.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/icomoon.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/libs.min.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/doc.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/simple-lightbox.css') }}" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon" />
+        
+        <!-- Owl Carousel -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+        
+        <!-- Icons -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/icofont/icofont.min.css') }}">
+        
+        <!-- Slick Slider CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='plugins/slick-carousel/slick/slick-theme.css') }}">
+        
+        <!-- Tailwind CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}" />
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header class="header" data-page="index">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center">
+                <div class="logo header_logo">
+                    <a class="d-inline-flex align-items-center" href="{{ url_for('index') }}">
+                        <span class="logo_picture">
+                            <img src="{{ url_for('static', filename='svg/logo-retina.svg') }}" alt="RetinaScope" />
+                        </span>
+                    </a>
+                </div>
+                <button
+                    class="header_trigger"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#headerMenu"
+                    aria-controls="headerMenu"
+                >
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                <nav class="header_nav collapse" id="headerMenu">
+                    <ul class="header_nav-list">
+                        <li class="header_nav-list_item">
+                            <a class="nav-item" href="{{ url_for('index') }}" data-page="visualization">Home</a>
+                        </li>                       
+                        <li class="header_nav-list_item">
+                            <a class="nav-item" href="{{ url_for('documentation') }}" data-page="documentation">Documentation</a>
+                        </li>
+                        <li class="header_nav-list_item">
+                            <a class="nav-item current" href="{{ url_for('visualization') }}" data-page="visualization">Visualization</a>
+                        </li>
+                        <ul class="header_nav-list">
+                            <li class="header_nav-list_item">
+                                <a href="{{ url_for('upload') }}" class="btn--gradient">Get Started</a>
+                            </li>                        
+                        </ul>
+                    </ul>
+                    <ul class="promobar_socials d-flex align-items-center justify-content-center">
+                    </ul>
+                </nav>
+            </div>
+        </header>
+                
+        <!-- documentation content start -->
+        <main class="container">
+            <div class="container">
+                <article class="docs-article" id="section-2">
+                    <header class="docs-header">
+                        <h5 class="section-heading">Model Performance Visualization</h5>
+                        <section class="docs-intro">
+                            <p>This page displays the visualization of the diabetic retinopathy detection model's performance, including accuracy metrics, comparison graphs between training and validation results, and other evaluations during the training process.</p>
+                        </section><!--//docs-intro-->
+                    
+                        <section class="docs-section" id="item-2-1">
+                            <h2 class="section-heading">Training vs Validation Accuracy</h2>
+                            <p>The graph below shows the accuracy metrics of the model during both training and validation phases.</p>
+                            <canvas id="accuracyChart" width="400" height="200"></canvas>
+                        </section><!--//section-->
+                    
+                        <section class="docs-section" id="item-2-2">
+                            <h2 class="section-heading">Training vs Validation Loss</h2>
+                            <p>The following graph compares the loss between the training and validation datasets during the training process.</p>
+                            <canvas id="lossChart" width="400" height="200"></canvas>
+                        </section><!--//section-->
+                    
+                        <section class="docs-section" id="item-2-3">
+                            <h2 class="section-heading">Precision, Recall, and F1-Score</h2>
+                            <p>This graph provides additional information on the evaluation metrics of the model, such as precision, recall, and the F1-score.</p>
+                            <canvas id="evaluationChart" width="400" height="200"></canvas>
+                        </section><!--//section-->
+
+                        <section class="docs-section" id="item-2-3">
+                            <h2 class="section-heading">Confusion Matrix</h2>
+                            <img src="{{ url_for('static', filename='img/confusion-matrix.png') }}" alt="Confusion Matrix" class="img-matrix" style="width: 700px;">
+                        </section><!--//section-->
+                    </header>
+                </article><!--//docs-article-->
+                
+            </div><!--//container-->
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer_wrapper d-sm-flex flex-wrap flex-lg-nowrap justify-content-lg-between">
+                    <div class="footer_block col-sm-6 col-lg-auto" data-order="1">
+                        <div class="logo logo--footer">
+                            <a class="d-inline-flex align-items-center" href="{{ url_for('index') }}">
+                                <span class="logo_picture">
+                                    <img src="{{ url_for('static', filename='svg/logo-retina.svg') }}" alt="retinascope" />
+                                </span>
+                            </a>
+                        </div>
+                        <p class="footer_block-text">
+                            Discover an advanced AI solution for detecting Diabetic Retinopathy (DR) from retinal fundus images. Our system provides accurate predictions, enabling timely treatment and prevention of vision loss.
+                        </p>
+                        <div class="wrapper d-flex flex-column">
+                            <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="mailto:retinascope@mail.com">
+                                <i class="icon-envelope icon"></i>
+                                retinascope@mail.com
+                            </a>
+                            <a class="link link--contacts text text--sm d-inline-flex align-items-center" href="tel:+123456789">
+                                <i class="icon-phone-solid icon"></i>
+                                +62-899-8080-222
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer_block col-sm-6 col-lg-auto" data-order="2">
+                        <h5 class="footer_block-header">Information:</h5>
+                        <ul class="footer_block-nav">
+                            <li class="footer_block-nav_item">
+                                <a class="link" href="{{ url_for('documentation') }}">Documentation of The Dataset</a>
+                            </li>
+                            <li class="footer_block-nav_item">
+                                <a class="link" href="{{ url_for('visualization') }}">Visualization</a>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <div class="footer_block col-sm-6 col-lg-auto" data-order="4">
+                        <h5 class="footer_block-header">Build with</h5>
+                        <ul class="footer_block-instagram d-grid">
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                         <img class="lazy" data-src="{{ url_for('static', filename='img/flask.png') }}" src="{{ url_for('static', filename='img/flask.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/jupyter.png') }}" src="{{ url_for('static', filename='img/jupyter.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/Python.png') }}" src="{{ url_for('static', filename='img/Python.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                      <picture>
+                                            <img class="lazy" data-src="{{ url_for('static', filename='img/HTML Logo.png') }}" src="{{ url_for('static', filename='img/HTML Logo.png') }}" alt="media" />
+                                      </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                    <picture>
+                                        <img class="lazy" data-src="{{ url_for('static', filename='img/CSS Logo.png') }}" src="{{ url_for('static', filename='img/CSS Logo.png') }}" alt="media" />
+                                    </picture>
+                                </a>
+                            </li>
+                            <li class="footer_block-instagram_item">
+                                <a>
+                                     <picture>
+                                          <img class="lazy" data-src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" src="{{ url_for('static', filename='img/JavaScript Logo Download Vector.png') }}" alt="media" />
+                                     </picture>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_secondary">
+                <div class="container d-flex flex-column flex-sm-row align-items-center justify-content-sm-between">
+                    <a class="footer_secondary-scroll" id="scrollToTop" href="#">
+                        <i class="icon-angle-up icon"></i>
+                    </a>
+                    <p class="footer_secondary-copyright">Copyright @ <span id="currentYear"></span> retinascope</p>
+                </div>
+            </div>
+        </footer>        
+        <!-- External Scripts -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <!-- Custom JS -->
+        <script defer src="assets/fontawesome/js/all.min.js"></script>
+        <script src="{{ url_for('static', filename='js/all.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/common.min.js') }}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+        <script src="{{ url_for('static', filename='js/docs.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="{{ url_for('static', filename='js/chart.js') }}"></script> 
+        <script src="{{ url_for('static', filename='js/apexchart.js') }}"></script> 
+
+        <!-- Initialize AOS -->
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>
